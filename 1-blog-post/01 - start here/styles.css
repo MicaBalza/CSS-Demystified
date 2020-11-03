@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* + * {
+  margin-top: 1em;
+}
+
+body {
+  margin: 0;
+  font-family: "PT Serif", serif;
+  font-size: 1.125rem;
+  line-height: 1.6em;
+  color: #414141;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: 6rem;
+  line-height: 0.8125em;
+}
+
+a {
+  color: #ca5e10;
+}
+
+.subtitle {
+  margin-bottom: 3em;
+  font-size: 2.25rem;
+  line-height: 1.2em;
+  color: rgb(125, 125, 125);
+}
+
+.container {
+  width: 90%;
+  max-width: 39rem;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin: 6rem 0;
+  padding: 0 2rem;
+  max-width: 75rem;
+}
+
+.lead {
+  font-size: 1.3125rem;
+  line-height: 1.6em;
+}

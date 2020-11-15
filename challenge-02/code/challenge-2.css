@@ -1,10 +1,14 @@
 :root {
   --clr-neutral-100: #fff;
+  --clr-neutral-200: #e9ecf2;
+  --clr-neutral-300: #b9bbc2;
   --clr-neutral-400: #474554;
+  --clr-neutral-500: #000000;
   --clr-primary-200: #bac9e8;
   --clr-primary-300: #3c7dff;
   --clr-primary-400: #0044cc;
   --clr-primary-500: #0c1832;
+  --clr-text-primary: 2, 2, 3;
 
   --ff-base: "IBM Plex Serif", serif;
   --ff-accent: "Poppins", sans-serif;
@@ -30,9 +34,13 @@ body {
 
 .cta {
   max-width: 40rem;
-  margin: 0 auto;
+  margin: 0 auto 5em auto;
   padding: 5rem;
   border-radius: 2.5rem;
+  color: var(--fg, rgb(var(--clr-text-primary)));
+  box-shadow: 0px 48px 64px rgba(var(--clr-text-primary), 4%),
+    0px 44px 200px rgba(var(--clr-text-primary), 2%),
+    0px 108px 168px rgba(var(--clr-text-primary), 3%);
 }
 
 .btn {
@@ -47,32 +55,68 @@ body {
 }
 
 .btn-primary {
-  background: var(--clr-primary-400);
-  color: var(--clr-neutral-100);
+  background: var(--bg-btn-primary, var(--clr-primary-400));
+  color: var(--fg-btn-primary, var(--clr-neutral-100));
 }
 .btn-primary:hover {
-  background: var(--clr-primary-300);
+  background: var(--hov-btn-primary, var(--clr-primary-300));
 }
 
 .btn-secondary {
-  background: var(--clr-neutral-400);
-  color: var(--clr-neutral-100);
+  background: var(--bg-btn-secondary, var(--clr-neutral-400));
+  color: var(--fg-btn-secondary, var(--clr-neutral-100));
 }
 .btn-secondary:hover {
-  background: var(--clr-primary-500);
+  background: var(--hov-btn-secondary, var(--clr-primary-500));
 }
 
 .btn-outline {
-  border: 2px solid var(--clr-primary-400);
-  color: var(--clr-primary-400);
+  border: 2px solid var(--fg-btn-outline, var(--clr-primary-400));
+  color: var(--fg-btn-outline, var(--clr-primary-400));
   /* remove the border size from the padding for equal sizing */
   padding: calc(0.625rem - 2px) calc(1.5rem - 2px);
 }
+
 .btn-outline:hover {
-  background: var(--clr-primary-400);
-  color: var(--clr-neutral-100);
+  background: var(--fg-btn-outline, var(--clr-primary-400));
+  color: var(--bg, var(--clr-neutral-100));
 }
 
 .bg-light {
-  background: var(--clr-neutral-100);
+  --bg: var(--clr-neutral-100);
+
+  background: var(--bg);
+}
+
+.bg-neutral {
+  --bg: var(--clr-neutral-200);
+
+  background: var(--bg);
+}
+
+.bg-accent {
+  --bg: var(--clr-primary-400);
+  --fg: var(--clr-neutral-100);
+  --bg-btn-primary: var(--clr-neutral-100);
+  --fg-btn-primary: var(--clr-primary-400);
+  --hov-btn-primary: var(--clr-primary-200);
+  --bg-btn-secondary: var(--clr-primary-500);
+  --hov-btn-secondary: var(--clr-neutral-500);
+  --fg-btn-outline: var(--clr-neutral-100);
+
+  background: var(--bg);
+}
+
+.bg-dark {
+  --bg: var(--clr-primary-500);
+  --fg: var(--clr-neutral-100);
+  --bg-btn-primary: var(--clr-primary-300);
+  --fg-btn-primary: var(--clr-neutral-100);
+  --hov-btn-primary: var(--clr-primary-400);
+  --bg-btn-secondary: var(--clr-neutral-100);
+  --fg-btn-secondary: var(--clr-primary-300);
+  --hov-btn-secondary: var(--clr-neutral-300);
+  --fg-btn-outline: var(--clr-neutral-100);
+
+  background: var(--bg);
 }

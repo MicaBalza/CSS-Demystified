@@ -1,0 +1,177 @@
+/* Custom properties */
+
+:root {
+  --spacer: 1rem;
+
+  --clr-neutral-900: #171717;
+  --clr-neutral-700: #333;
+  --clr-neutral-300: #cfcfcf;
+  --clr-neutral-100: #fff;
+  --clr-accent-400: #59e89c;
+  --clr-accent-500: #00986a;
+
+  --ff-primary: "PT Sans", sans-serif;
+
+  --fw-700: 700;
+  --fw-400: 400;
+
+  --box-shadow: 0 0.25em 1.5em rgba(0, 0, 0, 0.15);
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: var(--box-shadow);
+}
+
+ul[class] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Utility classes */
+
+.flow-content > * + * {
+  margin-top: var(--flow-space, var(--spacer));
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+}
+
+.split > * + * {
+  margin: calc(var(--spacer) * 3) 0 0 0;
+}
+.bg--black {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+
+.text--accent {
+  color: var(--clr-accent-400);
+}
+
+/* general styling */
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--clr-neutral-900);
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+h1 span {
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 2.1875rem;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: inherit;
+  padding: 0.75em 1.5em;
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-900);
+}
+
+/* hero */
+
+.hero {
+  --flow-space: 3rem;
+}
+
+.hero__img {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  order: -1;
+}
+
+/* tricks */
+
+.tricks li::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  background: var(--clr-accent-400);
+  position: absolute;
+  transform: translate(-0.5rem, -0.5rem);
+  z-index: -1;
+}
+
+/* cta */
+
+.cta {
+  --flow-space: 3rem;
+
+  background-image: url(./assets/cta-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* queries */
+
+@media (min-width: 1280px) {
+  .split {
+    flex-direction: row;
+  }
+
+  .split > * + * {
+    margin: 0 0 0 var(--spacer);
+  }
+
+  section {
+    padding: 8.125rem 0;
+  }
+
+  .hero__img {
+    order: 0;
+    flex: 1 0 45%;
+  }
+
+  .cta {
+    text-align: center;
+  }
+}
